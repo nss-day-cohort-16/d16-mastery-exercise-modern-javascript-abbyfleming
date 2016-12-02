@@ -3,26 +3,51 @@
 <head>
 	<title>Robot Battledome</title>
 	<link rel="stylesheet" type="text/css" href="css/quiz.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
 
 <div id="dom-input">
-	<label>Name Your Robot:<input type="text" id="robotOneName"></label><br>
-	<!-- SELECT ELEMENT -->
 
-	<label>Name Your Robot:<input type="text" id="robotTwoName"></label>
-	<!-- SELECT ELEMENT -->
+	<!-- USER ROBOT -->
+	<label>Name Your Robot:<input type="text" id="robotOneName"></label><br>
+	<label>What type?</label>
+	<select id="UserRobot">
+		<option value="whambulance">Whambulance</option>
+		<option value="wedgie">Wedgie</option>
+		<option value="gatorBlade">Gatorblade</option>
+		<option value="spinister">Spinister</option>
+		<option value="jackTheFlipper">JackTheFlipper</option>
+		<option value="vladiator">Vladiator</option>
+	</select>
+
+	<br><br>
+
+	<!-- ENEMY ROBOT -->
+	<label>Name Your Enemy:<input type="text" id="robotTwoName"></label><br>
+	<label>What type?</label>
+	<select id="EnemyRobot">
+		<option value="whambulance">Whambulance</option>
+		<option value="wedgie">Wedgie</option>
+		<option value="gatorBlade">Gatorblade</option>
+		<option value="spinister">Spinister</option>
+		<option value="jackTheFlipper">JackTheFlipper</option>
+		<option value="vladiator">Vladiator</option>
+	</select>
 </div>
+
+	<br><br>
 
 <div id="dom-attack">
-	<!-- ATTACK BUTTON -->
+	<button id="attackBtn">ATTACK!</button>
 </div>
 
 
-<div id="dom-display-winner">
-</div>
+<div id="dom-display-winner" class="winner"></div>
 
 
 <script type="text/javascript" src="javascripts/quiz.js"></script>
+<script type="text/javascript" src="javascripts/fight.js"></script>
+<script type="text/javascript" src="javascripts/dom-interaction.js"></script>
 </body>
 </html>

@@ -1,13 +1,11 @@
 "use strict";
 
-console.log("quiz.js linked");
-
-
 /* ---------------  BASE ROBOT MODEL --------------- */
 /* Once completed, do not touch! */
 
 function Robot(){
-	// ADD SOMETHING HERE. ALL ROBOTS INHERIT THIS PROPERTY.
+	this.name = "";
+	this.flamethrower = false;
 }
 
 
@@ -15,7 +13,9 @@ function Robot(){
 
 /// WEDGE
 function Wedge(){
+	this.type = "wedge";
 	this.weapon = "wedgies";
+	this.weightClass = "Featherweight";
 }
 
 Wedge.prototype = new Robot();
@@ -23,7 +23,9 @@ Wedge.prototype = new Robot();
 
 /// SPINNER
 function Spinner(){
+	this.type = "spinner";
 	this.weapon = "fast spinny things";
+	this.weightClass = "Hobbyweight";
 }
 
 Spinner.prototype = new Robot();
@@ -31,7 +33,9 @@ Spinner.prototype = new Robot();
 
 /// FLIPPER
 function Flipper(){
+	this.type = "flipper";
 	this.weapon = "power lift";
+	this.weightClass = "Lightweight";
 }
 
 Flipper.prototype = new Robot();
@@ -69,17 +73,14 @@ let vladiator = new Flipper();
 	vladiator.damage = Math.floor(Math.random() * (90 - 60)) + 60;
 
 
-
-
-
 /* ----- CONSOLE LOG  ----- */
 
-console.log("whambulance", whambulance);
-console.log("wedgie", wedgie);
-console.log("gatorblade", gatorblade);
-console.log("spinister", spinister);
-console.log("jackTheFlipper", jackTheFlipper);
-console.log("vladiator", vladiator);
+// console.log("whambulance", whambulance);
+// console.log("wedgie", wedgie);
+// console.log("gatorblade", gatorblade);
+// console.log("spinister", spinister);
+// console.log("jackTheFlipper", jackTheFlipper);
+// console.log("vladiator", vladiator);
 
 
 
