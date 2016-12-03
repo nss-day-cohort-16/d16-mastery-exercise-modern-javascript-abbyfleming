@@ -1,12 +1,33 @@
 "use strict";
 
 
-function determineRobots(){
-	//determine which robots are selected
-	//send selections to fight
+function determineRobots(robotFromDom){
 
+	let userRobot;
+
+	if (robotFromDom === "whambulance") {
+		userRobot = whambulance;
+	} 
+	else if (robotFromDom === "wedgie"){
+		userRobot = wedgie;
+	}
+	else if (robotFromDom === "gatorblade"){
+		userRobot = gatorblade;
+	}
+	else if (robotFromDom === "spinister"){
+		userRobot = spinister;
+	}
+	else if (robotFromDom === "jackTheFlipper"){
+		userRobot = jackTheFlipper;
+	}
+	else if (robotFromDom === "vladiator"){
+		userRobot = vladiator;
+	}
+
+	return userRobot;
 
 }
+
 
 
 
@@ -21,5 +42,5 @@ function fight(userRobot, enemyRobot){
 
 
 function winner(){
-	$("#dom-display-winner").html(`The ? defeated ? with its ?`);
+	$("#dom-display-winner").html(`${userRobot.name} the ${userRobot.type} defeated ? with its ?`);
 }
