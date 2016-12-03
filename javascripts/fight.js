@@ -29,9 +29,16 @@ function determineRobots(robotFromDom){
 }
 
 
+function fight(){
 
+	let userRobot = getUserRobotValue();
+	let enemyRobot = getEnemyRobotValue();
 
-function fight(userRobot, enemyRobot){
+	console.log("FIGHT");
+
+	console.log("userRobot", userRobot);
+	console.log("enemyRobot", enemyRobot);
+	
 	//for both robots:
 
 	//robot health - robot damage
