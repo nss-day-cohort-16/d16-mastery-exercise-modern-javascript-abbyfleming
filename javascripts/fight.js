@@ -30,11 +30,6 @@ function determineRobots(robotFromDom){
 
 Robot.prototype.fight = function(damage){
 	this.health -= damage;
-	console.log("prototype fight", this.health);
-
-	if (this.health <= 0){
-		winner();
-	}
 }
 
 
@@ -45,14 +40,27 @@ function fight(){
 
 	$("#dom-display-battle").html(`A wise choice. You have chosen ${userRobot.name} the ${userRobot.robotName} to battle ${enemyRobot.name} the ${enemyRobot.robotName}.`);
 	
-	//pass in damage of each robot instead of 5 or 10.
-	userRobot.fight(5);
-	enemyRobot.fight(10);
+	userRobot.fight(enemyRobot.damage);
+	enemyRobot.fight(userRobot.damage);
+
+	if (userRobot.health <= 0 || enemyRobot.health <= 0){
+		winner(userRobot, enemyRobot);
+	}
 	
 }
 
 
-function winner(){
-	//$("#dom-display-battle").html(`${userRobot.name} the ${userRobot.type} defeated ? with its ?`);
-	$("#dom-display-winner").html(`We have a winner!`);
+function winner(user, enemy){
+
+	if (user.health <= 0){
+		//enemy won
+		$("#dom-display-winner").html(`${enemy.name} the ${enemy.type} defeated ${user.name} the ${user.type} with ${enemy.weapon}.`);
+	} 
+	else if (enemy.health <= 0){
+		//user won
+		$("#dom-display-winner").html(`${user.name} the ${user.type} defeated ${enemy.name} the ${enemy.type} with ${user.weapon}.`);
+	}
+	else if (enemy.health <= 0 && user.health <= 0){
+		$("#dom-display-winner").html(`Total Knockout. Robots tied. Fight again.`);
+	}
 }

@@ -47,38 +47,33 @@ Flipper.prototype = new Robot();
 let whambulance = new Wedge();
 	whambulance.robotName = "Whambulance";
 	whambulance.health = Math.floor(Math.random() * (80 - 50)) + 50;
-	whambulance.damage = Math.floor(Math.random() * (50 - 30)) + 30;
+	whambulance.damage = Math.floor(Math.random() * (20 - 10)) + 10;
 
 let wedgie = new Wedge();
 	wedgie.robotName = "Wedgie";
 	wedgie.health = Math.floor(Math.random() * (100 - 70)) + 70;
-	wedgie.damage = Math.floor(Math.random() * (70 - 40)) + 40;
+	wedgie.damage = Math.floor(Math.random() * (30 - 20)) + 20;
 
 // SPINNER MODELS
 let gatorblade = new Spinner();
 	gatorblade.robotName = "Gatorblade";
 	gatorblade.health = Math.floor(Math.random() * (120 - 60)) + 60;
-	gatorblade.damage = Math.floor(Math.random() * (90 - 60)) + 60;
+	gatorblade.damage = Math.floor(Math.random() * (25 - 15)) + 15;
 
 let spinister = new Spinner();
 	spinister.robotName = "Spinister";
 	spinister.health = Math.floor(Math.random() * (90 - 60)) + 60;
-	spinister.damage = Math.floor(Math.random() * (60 - 30)) + 30;
+	spinister.damage = Math.floor(Math.random() * (35 - 25)) + 25;
 
 
 //FLIPPER MODELS
 let jackTheFlipper = new Flipper();
 	jackTheFlipper.robotName = "JackTheFlipper";
 	jackTheFlipper.health = Math.floor(Math.random() * (100 - 80)) + 80; 
-	jackTheFlipper.damage = Math.floor(Math.random() * (80 - 50)) + 50; 
+	jackTheFlipper.damage = Math.floor(Math.random() * (15 - 5)) + 5; 
 
 
 let vladiator = new Flipper();
 	vladiator.robotName = "Vladiator";
 	vladiator.health = Math.floor(Math.random() * (110 - 80)) + 70;
-	vladiator.damage = Math.floor(Math.random() * (90 - 70)) + 70;
-
-
-
-
-
+	vladiator.damage = Math.floor(Math.random() * (40 - 30)) + 30;
