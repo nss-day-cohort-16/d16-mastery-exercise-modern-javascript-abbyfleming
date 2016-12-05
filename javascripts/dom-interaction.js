@@ -10,8 +10,7 @@
 function getUserRobotValue(){
 		let selectUserRobot = $('#UserRobot').val();		
 		let UserRobot = determineRobots(selectUserRobot);
-		UserRobot.name = $('#robotOneName').val();
-		//console.log("UserRobot", UserRobot); 
+		UserRobot.name = $('#robotOneName').val(); 
 		return UserRobot;
  }
 
@@ -22,8 +21,6 @@ function getEnemyRobotValue(){
 		let EnemyRobot = determineRobots(selectEnemyRobot);
 		//Give the chosen robot the user input name
 		EnemyRobot.name = $('#robotTwoName').val();
-		//console.log("EnemyRobot", EnemyRobot);
-
 		return EnemyRobot;
 
 }

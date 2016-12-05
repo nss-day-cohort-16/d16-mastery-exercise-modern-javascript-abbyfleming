@@ -28,26 +28,31 @@ function determineRobots(robotFromDom){
 
 }
 
+Robot.prototype.fight = function(damage){
+	this.health -= damage;
+	console.log("prototype fight", this.health);
+
+	if (this.health <= 0){
+		winner();
+	}
+}
+
 
 function fight(){
 
 	let userRobot = getUserRobotValue();
 	let enemyRobot = getEnemyRobotValue();
 
-	console.log("FIGHT");
-
-	console.log("userRobot", userRobot);
-	console.log("enemyRobot", enemyRobot);
+	$("#dom-display-battle").html(`A wise choice. You have chosen ${userRobot.name} the ${userRobot.robotName} to battle ${enemyRobot.name} the ${enemyRobot.robotName}.`);
 	
-	//for both robots:
-
-	//robot health - robot damage
-	//update health
+	//pass in damage of each robot instead of 5 or 10.
+	userRobot.fight(5);
+	enemyRobot.fight(10);
 	
-	//if health < 0, declare a winner.
 }
 
 
 function winner(){
-	$("#dom-display-winner").html(`${userRobot.name} the ${userRobot.type} defeated ? with its ?`);
+	//$("#dom-display-battle").html(`${userRobot.name} the ${userRobot.type} defeated ? with its ?`);
+	$("#dom-display-winner").html(`We have a winner!`);
 }
