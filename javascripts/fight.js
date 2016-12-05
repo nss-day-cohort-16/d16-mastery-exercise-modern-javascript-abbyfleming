@@ -30,7 +30,7 @@ function determineRobots(robotFromDom){
 
 Robot.prototype.fight = function(damage){
 	this.health -= damage;
-}
+};
 
 
 function fight(){
@@ -43,24 +43,27 @@ function fight(){
 	userRobot.fight(enemyRobot.damage);
 	enemyRobot.fight(userRobot.damage);
 
+	console.log("userRobot", userRobot);
+	console.log("enemyRobot", enemyRobot); 
+
 	if (userRobot.health <= 0 || enemyRobot.health <= 0){
 		winner(userRobot, enemyRobot);
-	}
-	
+	}	
 }
 
 
-function winner(user, enemy){
+function winner(userRobot, enemyRobot){
 
-	if (user.health <= 0){
+	if (userRobot.health <= 0){
 		//enemy won
-		$("#dom-display-winner").html(`${enemy.name} the ${enemy.type} defeated ${user.name} the ${user.type} with ${enemy.weapon}.`);
+		$("#dom-display-winner").html(`${enemyRobot.name} the ${enemyRobot.type} defeated ${userRobot.name} the ${userRobot.type} with ${enemyRobot.weapon}.`);
 	} 
-	else if (enemy.health <= 0){
+	else if (enemyRobot.health <= 0){
 		//user won
-		$("#dom-display-winner").html(`${user.name} the ${user.type} defeated ${enemy.name} the ${enemy.type} with ${user.weapon}.`);
+		$("#dom-display-winner").html(`${userRobot.name} the ${userRobot.type} defeated ${enemyRobot.name} the ${enemyRobot.type} with ${userRobot.weapon}.`);
 	}
-	else if (enemy.health <= 0 && user.health <= 0){
+	else if (enemyRobot.health <= 0 && userRobot.health <= 0){
 		$("#dom-display-winner").html(`Total Knockout. Robots tied. Fight again.`);
 	}
 }
+
